@@ -129,18 +129,7 @@ u8 V_BMA2x2RESOLUTION_U8R = BMA2x2_14_RESOLUTION;
  * Remarks:
  *
  ****************************************************************************/
-BMA2x2_RETURN_FUNCTION_TYPE bma2x2_burst_read(u8 addr,
-u8 *data, u32 len)
-{
-	BMA2x2_RETURN_FUNCTION_TYPE comres = C_BMA2x2_Zero_U8X;
-	if (p_bma2x2 == BMA2x2_NULL) {
-		return E_BMA2x2_NULL_PTR;
-		} else {
-			comres = p_bma2x2->BMA2x2_BURST_READ_FUNC
-			(p_bma2x2->dev_addr, addr, data, len);
-		}
-	return comres;
-}
+/* removed bma2x2_burst_read () for testing */
 /****************************************************************************
  *	Description: *//**\brief This function is used for initialize
  *	bus read and bus write functions
@@ -174,7 +163,7 @@ u8 *data, u32 len)
  * Remarks:
  *
  ***************************************************************************/
-BMA2x2_RETURN_FUNCTION_TYPE bma2x2_init(struct bma2x2_t *bma2x2)
+BMA2x2_RETURN_FUNCTION_TYPE bma2x2_123init(struct bma2x2_t *bma2x2) /* renaming bma2x2_init to bma2x2_123init */
 {
 	BMA2x2_RETURN_FUNCTION_TYPE comres = C_BMA2x2_Zero_U8X;
 	u8 data = C_BMA2x2_Zero_U8X;
